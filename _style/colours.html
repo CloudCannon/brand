@@ -1,0 +1,60 @@
+---
+title: Colours
+colours:
+  - name: Header Blue
+    hex_value: 135571
+    rgb_value: rgb(19, 85, 113)
+    text_colour: fff
+  - name: Button Blue
+    hex_value: 006DCC
+    rgb_value: rgb(0, 109, 204)
+    text_colour: fff
+  - name: CloudCannon Blue
+    hex_value: 26ABE2
+    rgb_value: rgb(38, 171, 226)
+    text_colour: fff
+  - name: Dark Contrast
+    hex_value: 2B2E31
+    rgb_value: rgb(43, 46, 49)
+    text_colour: fff
+  - name: Login Grey
+    hex_value: 666
+    rgb_value: rgb(102, 102, 102)
+    text_colour: fff
+  - name: Page Grey
+    hex_value: F5F5F5
+    rgb_value: rgb(245, 245, 245)
+    text_colour: 444
+
+other_colours:
+  - name: Urine Yellow
+    hex_value: F7E064
+    rgb_value: rgb(247, 224, 100)
+    text_colour: fff
+
+---
+
+<ul class="colour-displays">
+	{% for colour in page.colours %}
+	<li>
+		<h3 style="background-color: #{{ colour.hex_value }}; color: #{{ colour.text_colour }};">{{ colour.name }}</h3>
+		<p title="HEX"><code>#{{ colour.hex_value }}</code></p>
+		<p title="RGB"><code>{{ colour.rgb_value }}</code></p>
+	</li>
+	{% endfor %}
+</ul>
+
+<p>These colours should be 
+
+<hr>
+
+<h2>Other Colours</h2>
+<ul class="colour-displays">
+	{% for colour in page.other_colours %}
+	<li>
+		<h3 style="background-color: #{{ colour.hex_value }}; color: #{{ colour.text_colour }};">{{ colour.name }}</h3>
+		<p title="HEX"><code>#{{ colour.hex_value }}</code></p>
+		<p title="RGB"><code>{{ colour.rgb_value }}</code></p>
+	</li>
+	{% endfor %}
+</ul>

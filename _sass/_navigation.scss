@@ -1,0 +1,151 @@
+.nav-open header {
+	display: block;
+}
+
+.mobile-nav {
+	padding: $mobile-nav-padding;
+	height: $mobile-nav-height;
+	background-color: $nav-background-color;
+
+	> img {
+		height: 40px;
+		padding: 0;
+		display: block;
+		margin: 0 auto;
+	}
+
+	.open-nav {
+		background-image: url(/img/icons/menu.svg);
+		background-color: transparent;
+		background-repeat: no-repeat;
+		background-size: 100%;
+		width: $mobile-nav-height - ($mobile-nav-padding * 2);
+		height: $mobile-nav-height - ($mobile-nav-padding * 2);
+		border: 0;
+		opacity: 0.6;
+		position: absolute;
+		top: $mobile-nav-padding;
+		right: $mobile-nav-padding;
+
+		&:focus {
+			outline: none;
+		}
+
+		&:focus,
+		&:hover {
+			opacity: 0.9;
+		}
+	}
+}
+
+.nav-item {
+	display: block;
+	font-family: "Open Sans", sans-serif;
+
+	> ul {
+		display: none;
+	}
+
+	> a {
+		color: #7199A9;
+		text-decoration: none;
+
+		&:hover { color: #C7D7DD; }
+		&:active { color: #FFF; }
+	}
+
+	&.current {
+		> a {
+			color: #FFF;
+		}
+
+		> ul {
+			display: block;
+		}
+	}
+
+	&.top-level {
+		> ul {
+			margin: 10px 0 10px 10px;
+			font-size: 0.9em;
+		}
+
+		> a {
+			font-size: 1.1em;
+		}
+	}
+}
+
+.section-nav {
+	position: relative;
+	padding: 0 $space;
+
+	.page-header & {
+		position: absolute;
+		top: 20px;
+		right: 0;
+		left: 0;
+	}
+
+	.prev,
+	.next {
+		background-size: 60px;
+		background-repeat: no-repeat;
+		width: 60px;
+		height: 60px;
+		display: inline-block;
+		opacity: 0.8;
+
+		&:hover {
+			opacity: 1;
+		}
+
+		&.disabled {
+			display: none;
+		}
+	}
+
+	.prev {
+		float: left;
+		background-image: url(/img/icons/arrow-back.svg);
+	}
+
+	.next {
+		float: right;
+		background-image: url(/img/icons/arrow-forward.svg);
+	}
+}
+
+header h1 {
+	display: none;
+}
+
+@media (min-width: 700px) {
+	.mobile-nav {
+		display: none;
+	}
+
+	body {
+		padding: 0 0 0 $nav-width;
+	}
+
+	header {
+		display: block;
+		width: $nav-width;
+		top: 0;
+		padding: $space * 2;
+	}
+
+	header h1 {
+		display: block;
+	}
+
+	.main {
+		top: 0;
+		left: $nav-width + ($space * 4);
+	}
+
+	.page-header .section-nav {
+		top: 80px;
+	}
+}
