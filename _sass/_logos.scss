@@ -1,6 +1,11 @@
 .logo-styles {
+	display: -webkit-flex;
 	display: flex;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	-webkit-flex-wrap: wrap;
 	flex-wrap: wrap;
+	-webkit-justify-content: center;
 	justify-content: center;
 	margin: 0 -10px 1em;
 
@@ -10,7 +15,8 @@
 	}
 
 	li {
-		flex: 1;
+		-webkit-flex: 1 1 150px;
+		flex: 1 1 150px;
 		border-radius: 2px;
 		background: #26ABE2;
 		padding: 60px;
@@ -22,12 +28,16 @@
 	}
 
 	.small {
+		-webkit-flex: 1 1 90px;
+		flex: 1 1 90px;
 		padding: 40px;
 		min-width: 90px;
 		max-width: 150px;
 	}
 
 	.tiny {
+		-webkit-flex: 1 1 80px;
+		flex: 1 1 80px;
 		padding: 20px;
 		min-width: 80px;
 		max-width: 120px;

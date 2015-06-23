@@ -10,13 +10,11 @@ For the majority of icons we use [Googles Material Design Icons](https://www.goo
 ---------------------------------------
 
 ### File Icons
-As CloudCannon is run off files it makes sense that they get special treatment. We have our own file set for anytime a file is referenced.
-
-When extending this library of icons please consider the following:
+Files are important to CloudCannon therefore it makes sense that they get special treatment. When extending this library of icons please consider the following:
 
 * The HTML file is a bright orange matching the HTML5 logo. The bright orange was also chosen as an HTML file should be a prominent click target in the app.
 * The folder icon is a color resembling the OSX finder folder. This is because the majority of our users at the time were using OSX.
 
 ![Internal File Icons](/img/style/file-icons.png)
 
-Anyone outside of CloudCannon wanting to use this icon set should contact [our support](mailto:support@cloudcannon.com). These icons are copyrighted to CloudCannon Inc.
+Anyone outside of CloudCannon wanting to use this icon set should contact [our support](mailto:support@cloudcannon.com). Copyright &copy; CloudCannon Inc.

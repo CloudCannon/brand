@@ -3,14 +3,14 @@ title: Fonts
 ---
 
 ### Merriweather
-Merriweather should be used in large bodies of text. This will allow for better readability over Open Sans. This should not be used for headings or interface elements. This font will sit in the middle ground between large fonts and small fonts.
+Use Merriweather in large bodies of text. This will allow for better readability over Open Sans. Avoid using this for headings or interface elements. This font will sit in the middle ground between large fonts and small fonts.
 
 * [Merriweather Google fonts](https://www.google.com/fonts/specimen/Merriweather)
 
 ---------------------------------------
 
 ### Open Sans
-Open Sans is to be used for just about everything except for bodies of text. This font will be used entirely for our app as there should be no large bodies of text within the interface. Any buttons or inputs will use Open Sans.
+Use Open Sans for just about everything except for bodies of text. Use this font for everything in the app as there should be no large bodies of text within the interface. Any buttons or inputs will use Open Sans.
 
 * [Open Sans Google fonts](https://www.google.com/fonts/specimen/Open+Sans)
 
