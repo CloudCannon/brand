@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
@@ -28,6 +27,14 @@
 			document.getElementById("open-nav").onclick = function () {
 				document.body.classList.toggle("nav-open");
 			};
+
+			function isTouchDevice() {
+				return 'ontouchstart' in window || 'onmsgesturechange' in window;
+			};
+
+			if (!isTouchDevice()) {
+				document.body.classList.add("no-touch");
+			}
 		</script>
 	</body>
 </html>

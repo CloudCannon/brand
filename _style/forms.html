@@ -1,0 +1,42 @@
+---
+title: Forms
+---
+
+<h3>Forms</h3>
+<!-- <p>Submit buttons must be display block. All font should use Open Sans  -->
+
+<form action="#" method="post" class="formatted">
+	<label for="email">Text/Email Input</label>
+	<input type="email" name="email" id="email" placeholder="Enter your text here..." required="">
+
+	<label for="password">Password</label>
+	<input type="password" name="password" id="password" placeholder="Enter your password here..." required="">
+
+	<label for="select">Select</label>
+	<select name="select" id="select">
+		<option>Option 1</option>
+		<option>Option 2</option>
+		<option>Option 3</option>
+	</select>
+
+	<label for="message">Textarea</label>
+	<textarea name="message" id="message" placeholder="Textarea"></textarea>
+
+	<input type="submit" value="Submit Button">
+</form>
+
+<hr>
+
+<h3>Checkboxes</h3>
+<p>As checkboxes can look wildly different we overwrite this for all of CloudCannon. We use a single span to cover the existing checkbox.</p>
+<p><label class="checkbox-label">
+	<input type="checkbox"><span class="checkbox-cover"></span>
+	Is this fancy?
+</label></p>
+
+{% highlight html %}
+<label class="checkbox-label">
+	<input type="checkbox"><span class="checkbox-cover"></span>
+	Is this fancy?
+</label>
+{% endhighlight %}
