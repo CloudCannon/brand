@@ -116,6 +116,11 @@ label {
 	margin: 0;
 	font-weight: 600;
 	color: #444;
+	margin: 1.3em 0 0 0;
+}
+
+form label:first-child {
+	margin-top: 0;
 }
 
 form.formatted {
