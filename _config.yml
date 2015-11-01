@@ -22,3 +22,6 @@ defaults:
     path: ""
   values:
     layout: docs
+
+sass:
+  style: compressed
