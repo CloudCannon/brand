@@ -65,3 +65,21 @@
 		background: #2B2E31;
 	}
 }
+
+.twitter-header {
+	line-height: 0;
+
+	.badge {
+		margin: -77px 0 25px 25px;
+		width: 130px;
+		border: 4px solid #fff;
+		border-radius: 2px;
+	}
+
+}
+
+.spacing-logo {
+	float: left;
+	margin-right: 20px;
+	border-radius: 2px;
+}
