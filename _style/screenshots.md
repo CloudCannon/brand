@@ -4,12 +4,13 @@ title: Screenshots
 
 Take screenshots free of any browser window or OS involved. CloudCannon works the same on all devices as a native app or in a browser. Wrap all screenshots in a basic window seen below.
 
-<img class="screenshot" src="/img/style/screenshot.png" alt="An example CloudCannon screenshot">
+![An example CloudCannon screenshot](/img/style/screenshot.png){: .screenshot}{: .classa }
 
 This is done to ensure:
 
 * There is no problem displaying them on white
 * It allows the image to standout with a clear differentiation from the text
+
 
 Achieve this without any extra markup by using borders and a background image.
 
