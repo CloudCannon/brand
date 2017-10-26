@@ -1,0 +1,102 @@
+#!/bin/bash
+
+# Generates brand assets
+# Requires inkscape and imagemagick
+# Make sure to run output images through an optimiser!
+
+BRAND_COLOUR='#407afc'
+DARK_BLUE_COLOUR='#364261'
+BRAND_GRADIENT_END_COLOUR='#429cfc'
+
+WHITE_EMBLEM_PATH="images/raw/emblem-white.svg"
+BLUE_EMBLEM_PATH="images/raw/emblem-blue.svg"
+WHITE_EMBLEM_WITH_TEXT_PATH="images/raw/emblem-with-text-white.svg"
+BLUE_EMBLEM_WITH_TEXT_PATH="images/raw/emblem-with-text-blue.svg"
+
+WD=`pwd`
+FOREGROUND_PATH="$WD/foreground.png"
+BACKGROUND_PATH="$WD/background.png"
+BACKGROUND_GRADIENT_PATH="$WD/background-gradient.png"
+
+function create_foreground {
+	echo "Rasterising foreground..."
+	inkscape --export-png $FOREGROUND_PATH -w $2 $1
+}
+
+function create_background {
+	echo "Generating background..."
+	convert -size "${1}x${1}" xc:$2 $BACKGROUND_PATH
+}
+
+function create_gradient_background {
+	echo "Generating gradient background..."
+	convert -size "${1}x${1}" -define gradient:angle=45 gradient:"${BRAND_COLOUR}"-"${BRAND_GRADIENT_END_COLOUR}" $BACKGROUND_GRADIENT_PATH
+}
+
+function create_foreground_on_background_image {
+	echo "Compositing image..."
+	composite -channel RGB -gravity center $1 $2 $3
+}
+function create_background_masked_by_foreground_image {
+	echo "Compositing image..."
+	composite -compose Dst_In -gravity center $1 -alpha Set $2 $3
+}
+
+function clean_up {
+	echo "Cleaning up temporary files..."
+	rm $FOREGROUND_PATH
+	rm $BACKGROUND_PATH
+	rm $BACKGROUND_GRADIENT_PATH
+}
+
+emblems=(
+	"white-emblem-on-blue 480 0.625 $WHITE_EMBLEM_PATH $BRAND_COLOUR"
+	"white-emblem-on-dark-blue 480 0.625 $WHITE_EMBLEM_PATH $DARK_BLUE_COLOUR"
+	"white-emblem-on-transparent 480 0.625 $WHITE_EMBLEM_PATH none"
+	"blue-emblem-on-white 480 0.625 $BLUE_EMBLEM_PATH #fff"
+	"blue-emblem-on-transparent 480 0.625 $BLUE_EMBLEM_PATH none"
+	"social-profile 800 0.625 $WHITE_EMBLEM_PATH $BRAND_COLOUR"
+	"white-emblem-with-text-on-blue 480 0.625 $WHITE_EMBLEM_WITH_TEXT_PATH $BRAND_COLOUR"
+	"white-emblem-with-text-on-dark-blue 480 0.625 $WHITE_EMBLEM_WITH_TEXT_PATH $DARK_BLUE_COLOUR"
+	"white-emblem-with-text-on-transparent 480 0.625 $WHITE_EMBLEM_WITH_TEXT_PATH none"
+	"blue-emblem-with-text-on-white 480 0.625 $BLUE_EMBLEM_WITH_TEXT_PATH #fff"
+	"blue-emblem-with-text-on-transparent 480 0.625 $BLUE_EMBLEM_WITH_TEXT_PATH none"
+
+	"white-emblem-on-blue 2048 0.625 $WHITE_EMBLEM_PATH $BRAND_COLOUR"
+	"white-emblem-on-dark-blue 2048 0.625 $WHITE_EMBLEM_PATH $DARK_BLUE_COLOUR"
+	"white-emblem-on-transparent 2048 0.625 $WHITE_EMBLEM_PATH none"
+	"blue-emblem-on-white 2048 0.625 $BLUE_EMBLEM_PATH #fff"
+	"blue-emblem-on-transparent 2048 0.625 $BLUE_EMBLEM_PATH none"
+	"white-emblem-with-text-on-blue 2048 0.625 $WHITE_EMBLEM_WITH_TEXT_PATH $BRAND_COLOUR"
+	"white-emblem-with-text-on-dark-blue 2048 0.625 $WHITE_EMBLEM_WITH_TEXT_PATH $DARK_BLUE_COLOUR"
+	"white-emblem-with-text-on-transparent 2048 0.625 $WHITE_EMBLEM_WITH_TEXT_PATH none"
+	"blue-emblem-with-text-on-white 2048 0.625 $BLUE_EMBLEM_WITH_TEXT_PATH #fff"
+	"blue-emblem-with-text-on-transparent 2048 0.625 $BLUE_EMBLEM_WITH_TEXT_PATH none"
+
+	"white-emblem-on-transparent-no-padding 480 1 $WHITE_EMBLEM_PATH none"
+	"blue-emblem-on-transparent-no-padding 480 1 $BLUE_EMBLEM_PATH none"
+	"white-emblem-with-text-on-transparent-no-padding 480 1 $WHITE_EMBLEM_WITH_TEXT_PATH none"
+	"blue-emblem-with-text-on-transparent-no-padding 480 1 $BLUE_EMBLEM_WITH_TEXT_PATH none"
+	"white-emblem-on-transparent-no-padding 2048 1 $WHITE_EMBLEM_PATH none"
+	"blue-emblem-on-transparent-no-padding 2048 1 $BLUE_EMBLEM_PATH none"
+	"white-emblem-with-text-on-transparent-no-padding 2048 1 $WHITE_EMBLEM_WITH_TEXT_PATH none"
+	"blue-emblem-with-text-on-transparent-no-padding 2048 1 $BLUE_EMBLEM_WITH_TEXT_PATH none"
+)
+
+for i in ${!emblems[@]}; do
+	params=(${emblems[$i]//:/ })
+	filename=${params[0]}
+	background_width=${params[1]}
+	foreground_width_percent=${params[2]}
+	foreground_path=${params[3]}
+	background_colour=${params[4]}
+	foreground_size=$(bc <<< "$background_width*$foreground_width_percent")
+
+	create_foreground $foreground_path $foreground_size
+	create_background $background_width $background_colour
+	create_foreground_on_background_image $FOREGROUND_PATH $BACKGROUND_PATH "images/generated/${filename}-${background_width}x${background_width}.png"
+
+	echo "---"
+done
+
+clean_up

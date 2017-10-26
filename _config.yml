@@ -1,16 +1,4 @@
 title: CloudCannon Brand
 
-collections:
-  style:
-    title: Style
-  assets:
-    title: Assets
-
-defaults:
-- scope:
-    path: ""
-  values:
-    layout: docs
-
 sass:
   style: compressed

@@ -4,7 +4,7 @@ title: Screenshots
 
 Take screenshots free of any browser window or OS involved. CloudCannon works the same on all devices as a native app or in a browser. Wrap all screenshots in a basic window seen below.
 
-![An example CloudCannon screenshot](/img/style/screenshot.png){: .screenshot}{: .classa }
+![An example CloudCannon screenshot](/images/style/screenshot.png){: .screenshot}
 
 This is done to ensure:
 
@@ -24,6 +24,6 @@ Achieve this without any extra markup by using borders and a background image.
     box-shadow: 0 1px 0 #ccc, 0 1px 1px #eee;
     border-radius: 2px;
     padding: 20px 0 0 0;
-    background: #DDD url(/img/icons/browser-buttons.svg) 4px 4px no-repeat;
+    background: #DDD url(/images/icons/browser-buttons.svg) 4px 4px no-repeat;
 }
 {% endhighlight %}

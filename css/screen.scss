@@ -1,21 +1,9 @@
 ---
 ---
-$body-background-color: #fff;
-$body-color-secondary: #222;
 
-$content-color: #222;
-$content-background-color: #fff;
-
-$nav-background-color: #135571;
-$nav-color-secondary: #fff;
-$nav-width: 180px;
-
-$page-header-background: #26ABE2;
-
-$mobile-nav-height: 60px;
-$mobile-nav-padding: 10px;
-
-$brand-color: #ffd200;
+{% for colour in site.data.colours %}
+  ${{ colour[0] }}: {{ colour[1] }};
+{% endfor %}
 
 @import "brand/mixins";
 @import "brand/normalize";

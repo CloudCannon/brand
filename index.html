@@ -4,16 +4,16 @@ permalink: /
 ---
 
 <header>
-	<img src="/raw/logo.svg">
+	<img src="/images/raw/emblem-with-text-white.svg">
 	<h1>Brand</h1>
 </header>
 
 <section>
-	<p>Design is very important at CloudCannon. These rules and assets exist to strengthen our consistency across all assets. This website is for:</p>
+	<p>Design is very important at CloudCannon. These rules and assets exist to strengthen our consistency across all sites. This website is for:</p>
 
 	<ul>
 		<li>Internal members of the team for all new assets</li>
-		<li>External people referencing to CloudCannon</li>
+		<li>External people referencing CloudCannon</li>
 	</ul>
 
 	<p>This documentation is a work in progress. If you find inconsistencies or something is unclear please contact <a href="mailto:support@cloudcannon.com">our support</a>.</p>
@@ -21,8 +21,158 @@ permalink: /
 
 <section>
 	<h2>Assets</h2>
-	{% assign items = site.assets | sort: 'order' %}
-	{% for item in items %}
-		{{ item.content | markdownify }}
-	{% endfor %}
+
+	<ul>
+		<li>Do not distort or change the logo/emblem</li>
+		<li>Do not have the text on its own</li>
+		<li>Do not display the logo/emblem in anything but white, black, grey or CloudCannon blue</li>
+	</ul>
+
+	<h3>Emblem with Text</h3>
+	<p>When using the CloudCannon logo, the pairing with text is preferred.</p>
+	<ul class="logo-styles overhang">
+		<li><img src="/images/raw/emblem-with-text-white.svg" alt="CloudCannon Logo"></li>
+		<li class="white"><img src="/images/raw/emblem-with-text-blue.svg" alt="CloudCannon Logo"></li>
+	</ul>
+	<ul class="logo-styles overhang">
+		<li class="small white"><img src="/images/raw/emblem-with-text-blue.svg" alt="CloudCannon Logo"></li>
+		<li class="small deep"><img src="/images/raw/emblem-with-text-white.svg" alt="CloudCannon Logo"></li>
+		<li class="small dark"><img src="/images/raw/emblem-with-text-white.svg" alt="CloudCannon Logo"></li>
+		<li class="small filler"></li>
+		<li class="small filler"></li>
+		<li class="small filler"></li>
+	</ul>
+	<ul>
+		<li>
+			White emblem with text:
+			<a href="/images/raw/emblem-with-text-white.svg" download>SVG</a>
+		</li>
+		<li>
+			Blue emblem with text:
+			<a href="/images/raw/emblem-with-text-blue.svg" download>SVG</a>
+		</li>
+		<li>
+			White emblem with text on blue:
+			<a href="/images/generated/white-emblem-with-text-on-blue-480x480.png" download>480x480 PNG</a> -
+			<a href="/images/generated/white-emblem-with-text-on-blue-2048x2048.png" download>2048x2048 PNG</a>
+		</li>
+		<li>
+			White emblem with text on dark blue:
+			<a href="/images/generated/white-emblem-with-text-on-dark-blue-480x480.png" download>480x480 PNG</a> -
+			<a href="/images/generated/white-emblem-with-text-on-dark-blue-2048x2048.png" download>2048x2048 PNG</a>
+		</li>
+		<li>
+			White emblem with text on transparent:
+			<a href="/images/generated/white-emblem-with-text-on-transparent-480x480.png" download>480x480 PNG</a> -
+			<a href="/images/generated/white-emblem-with-text-on-transparent-2048x2048.png" download>2048x2048 PNG</a>
+		</li>
+		<li>
+			White emblem with text on transparent no padding:
+			<a href="/images/generated/white-emblem-with-text-on-transparent-no-padding-480x480.png" download>480x480 PNG</a> -
+			<a href="/images/generated/white-emblem-with-text-on-transparent-no-padding-2048x2048.png" download>2048x2048 PNG</a>
+		</li>
+		<li>
+			Blue emblem with text on white:
+			<a href="/images/generated/blue-emblem-with-text-on-white-480x480.png" download>480x480 PNG</a> -
+			<a href="/images/generated/blue-emblem-with-text-on-white-2048x2048.png" download>2048x2048 PNG</a>
+		</li>
+		<li>
+			Blue emblem with text on transparent:
+			<a href="/images/generated/blue-emblem-with-text-on-transparent-480x480.png" download>480x480 PNG</a> -
+			<a href="/images/generated/blue-emblem-with-text-on-transparent-2048x2048.png" download>2048x2048 PNG</a>
+		</li>
+		<li>
+			Blue emblem with text on transparent no padding:
+			<a href="/images/generated/blue-emblem-with-text-on-transparent-no-padding-480x480.png" download>480x480 PNG</a> -
+			<a href="/images/generated/blue-emblem-with-text-on-transparent-no-padding-2048x2048.png" download>2048x2048 PNG</a>
+		</li>
+	</ul>
+
+	<h3>Emblem Only</h3>
+	<p>If space is a premium or CloudCannon is prevalent in the logo surroundings use the emblem only.</p>
+	<ul class="logo-styles overhang">
+		<li class="tiny"><img src="/images/raw/emblem-white.svg" alt="CloudCannon Logo"></li>
+		<li class="tiny white"><img src="/images/raw/emblem-blue.svg" alt="CloudCannon Logo"></li>
+		<li class="tiny deep"><img src="/images/raw/emblem-white.svg" alt="CloudCannon Logo"></li>
+		<li class="tiny dark"><img src="/images/raw/emblem-white.svg" alt="CloudCannon Logo"></li>
+		<li class="tiny darkest"><img src="/images/raw/emblem-white.svg" alt="CloudCannon Logo"></li>
+		<li class="tiny filler"></li>
+		<li class="tiny filler"></li>
+		<li class="tiny filler"></li>
+	</ul>
+	<p>When the emblem is used for an icon or badge, the white emblem on blue should always be used.</p>
+	<div class="spacing-container">
+		<div class="spacing-logo"><img src="/images/generated/white-emblem-on-blue-480x480.png" alt="CloudCannon emblem spacing explained" width="130" height="130"></div>
+		<p>There should be space equal to the center circle on either side. The emblem should be vertically aligned and have a minimum size that ensures a circle would fit above and below.</p>
+	</div>
+
+	<ul>
+		<li>
+			White emblem:
+			<a href="/images/raw/emblem-white.svg" download>SVG</a> -
+			<a href="/images/raw/emblem.psd" download>PSD</a>
+		</li>
+		<li>
+			Blue emblem:
+			<a href="/images/raw/emblem-blue.svg" download>SVG</a>
+		</li>
+		<li>
+			Black Google Material Icon sized emblem:
+			<a href="/images/raw/emblem-icon.svg" download>SVG</a>
+		</li>
+		<li>
+			White emblem on blue:
+			<a href="/images/generated/white-emblem-on-blue-480x480.png" download>480x480 PNG</a> -
+			<a href="/images/generated/white-emblem-on-blue-2048x2048.png" download>2048x2048 PNG</a>
+		</li>
+		<li>
+			White emblem on dark blue:
+			<a href="/images/generated/white-emblem-on-dark-blue-480x480.png" download>480x480 PNG</a> -
+			<a href="/images/generated/white-emblem-on-dark-blue-2048x2048.png" download>2048x2048 PNG</a>
+		</li>
+		<li>
+			White emblem on transparent:
+			<a href="/images/generated/white-emblem-on-transparent-480x480.png" download>480x480 PNG</a> -
+			<a href="/images/generated/white-emblem-on-transparent-2048x2048.png" download>2048x2048 PNG</a>
+		</li>
+		<li>
+			White emblem on transparent no padding:
+			<a href="/images/generated/white-emblem-on-transparent-no-padding-480x480.png" download>480x480 PNG</a> -
+			<a href="/images/generated/white-emblem-on-transparent-no-padding-2048x2048.png" download>2048x2048 PNG</a>
+		</li>
+		<li>
+			Blue emblem on white:
+			<a href="/images/generated/blue-emblem-on-white-480x480.png" download>480x480 PNG</a> -
+			<a href="/images/generated/blue-emblem-on-white-2048x2048.png" download>2048x2048 PNG</a>
+		</li>
+		<li>
+			Blue emblem on transparent:
+			<a href="/images/generated/blue-emblem-on-transparent-480x480.png" download>480x480 PNG</a> -
+			<a href="/images/generated/blue-emblem-on-transparent-2048x2048.png" download>2048x2048 PNG</a>
+		</li>
+		<li>
+			Blue emblem on transparent no padding:
+			<a href="/images/generated/blue-emblem-on-transparent-no-padding-480x480.png" download>480x480 PNG</a> -
+			<a href="/images/generated/blue-emblem-on-transparent-no-padding-2048x2048.png" download>2048x2048 PNG</a>
+		</li>
+	</ul>
+
+	<h3>Social</h3>
+	<div class="social-header overhang">
+		<img src="/images/exported/social-cover.png" srcset="/images/exported/social-cover.png 1x, /images/exported/social-cover@2x.png 2x" alt="CloudCannon social cover" class="cover">
+		<img src="/images/generated/social-profile-800x800.png" alt="CloudCannon social profile picture" class="badge">
+	</div>
+	<p>Social assets are based on the Twitter specifications and used everywhere.</p>
+	<ul>
+		<li>
+			Social cover:
+			<a href="/images/raw/social-cover.psd" download>PSD</a> -
+			<a href="/images/exported/social-cover.png" download>PNG</a> -
+			<a href="/images/exported/social-cover@2x.png" download>Retina PNG</a>
+		</li>
+		<li>
+			Social profile:
+			<a href="/images/generated/social-profile-800x800.png" download>PNG</a>
+		</li>
+	</ul>
 </section>

@@ -7,6 +7,11 @@ body {
 	margin: 0;
 }
 
+body {
+	background-color: #fcfcfc;
+	color: #333;
+}
+
 header {
 	height: 100vh;
 	width: 100vw;
@@ -50,7 +55,7 @@ footer {
 	}
 
 	@media (min-width: $content-width + ($overhang * 2)) {
-		.logo-styles {
+		.overhang {
 			margin-left: -$overhang;
 			margin-right: -$overhang;
 		}
