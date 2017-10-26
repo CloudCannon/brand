@@ -36,7 +36,7 @@ other_colours:
 <ul class="colour-displays">
 	{% for colour in page.colours %}
 	<li>
-		<h3 style="background-color: #{{ colour.hex_value }}; color: #{{ colour.text_colour }};">{{ colour.name }}</h3>
+		<h4 style="background-color: #{{ colour.hex_value }}; color: #{{ colour.text_colour }};">{{ colour.name }}</h4>
 		<p title="HEX"><code>#{{ colour.hex_value }}</code></p>
 		<p title="RGB"><code>{{ colour.rgb_value }}</code></p>
 	</li>
@@ -45,11 +45,11 @@ other_colours:
 
 <hr>
 
-<h2>Other Colours</h2>
+<h3>Other Colours</h3>
 <ul class="colour-displays">
 	{% for colour in page.other_colours %}
 	<li>
-		<h3 style="background-color: #{{ colour.hex_value }}; color: #{{ colour.text_colour }};">{{ colour.name }}</h3>
+		<h4 style="background-color: #{{ colour.hex_value }}; color: #{{ colour.text_colour }};">{{ colour.name }}</h4>
 		<p title="HEX"><code>#{{ colour.hex_value }}</code></p>
 		<p title="RGB"><code>{{ colour.rgb_value }}</code></p>
 	</li>

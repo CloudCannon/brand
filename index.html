@@ -1,0 +1,28 @@
+---
+layout: default
+permalink: /
+---
+
+<header>
+	<img src="/raw/logo.svg">
+	<h1>Brand</h1>
+</header>
+
+<section>
+	<p>Design is very important at CloudCannon. These rules and assets exist to strengthen our consistency across all assets. This website is for:</p>
+
+	<ul>
+		<li>Internal members of the team for all new assets</li>
+		<li>External people referencing to CloudCannon</li>
+	</ul>
+
+	<p>This documentation is a work in progress. If you find inconsistencies or something is unclear please contact <a href="mailto:support@cloudcannon.com">our support</a>.</p>
+</section>
+
+<section>
+	<h2>Assets</h2>
+	{% assign items = site.assets | sort: 'order' %}
+	{% for item in items %}
+		{{ item.content | markdownify }}
+	{% endfor %}
+</section>

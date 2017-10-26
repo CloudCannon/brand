@@ -2,20 +2,18 @@
 layout: default
 ---
 
-<section class="main">
-	<div class="page-header">
-		<h2>{% if page.heading %}{{ page.heading }}{% else %}{{ page.title }}{% endif %}</h2>
-		<!-- <h3>{{ section }}</h3> -->
+<header>
+	<h2>{{ page.title }}</h2>
+</header>
 
-		<div class="section-nav">
-			<a href="/style/buttons/" class="next"  title="Continue to Style"></a>
-		</div>
+<section>{{ content }}</section>
 
-	</div>
-	<article class="content">
-		{% if page.warning %}
-			<p class="warning">{{ page.warning }}</p>
-		{% endif %}
-		<div>{{ content }}</div>
-	</article>
-</section>
+{% for collection in site.collections %}
+	<section>
+		<h4>{{ collection.title }}</h4>
+		{% assign items = collection.docs | sort: 'order' %}
+		{% for item in items %}
+			{{ item.content | markdownify }}
+		{% endfor %}
+	</section>
+{% endfor %}

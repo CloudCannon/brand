@@ -1,21 +1,10 @@
+title: CloudCannon Brand
+
 collections:
   style:
     title: Style
-    permalink: /style/:title/
-    active_prefix: /style/
-    output: true
-
-  # app:
-  #   title: App
-  #   permalink: /app/:title/
-  #   active_prefix: /app/
-  #   output: true
-
   assets:
     title: Assets
-    permalink: /assets/:title/
-    active_prefix: /assets/
-    output: true
 
 defaults:
 - scope:

@@ -9,8 +9,7 @@ layout: default
 {% if url == "/" %}
 	{% assign url = "/guide/setup/" %}
 {% endif %}
-{% for item in site.collections %}
-	{% assign collection = item[1] %}
+{% for collection in site.collections %}
 	{% if section %}
 		{% if collection.output %}
 			{% assign next = collection %}
@@ -26,8 +25,8 @@ layout: default
 
 <section class="main">
 	<div class="page-header">
-		<h2>{% if page.heading %}{{ page.heading }}{% else %}{{ page.title }}{% endif %}</h2>
-		<h3>{{ section }}</h3>
+		<h3>{% if page.heading %}{{ page.heading }}{% else %}{{ page.title }}{% endif %}</h3>
+		<h4>{{ section }}</h4>
 
 		{% if items %}
 			{% include section-nav.html items=items previous_collection=previous next_collection=next %}
